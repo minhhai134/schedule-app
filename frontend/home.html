@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="home.css">
+
+    <title>Home</title>
+    <style>
+        /* textarea {
+            width: 95%;
+            height: 300px;
+        } */
+    </style>
+</head>
+
+<body>
+    <!-- <input type="file" accept="text" onchange="loadfile(event)"><br> -->
+    <!-- <textarea id="txt"></textarea> -->
+
+    <div class="main">
+        <div class="header">
+            <h1>Tạo ra lịch trình tối ưu</h1>
+        </div>
+        <input type="file" id="fileInput" style="display: none;" />
+        <button id="selectFileButton" class="custom-button">Chọn file dữ liệu</button>
+
+        <div class="center">
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+        function loadfile(event) {
+            var fr = new FileReader();
+            fr.onload = function () {
+                txt.value = fr.result;
+            };
+            fr.readAsText(event.target.files[0]);
+        }
+
+        document.getElementById('selectFileButton').addEventListener('click', function () {
+            document.getElementById('fileInput').click();
+        });
+
+        document.getElementById('fileInput').addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                console.log('Selected file:', file.name);
+                // You can handle the file here, e.g., upload it to a server
+            }
+
+            const formData = new FormData();
+
+            // Make an API call to upload the file
+        fetch('http://localhost:8081/api/createSchedule', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            // console.log('API response:', data);
+            // Use localStorage or sessionStorage to store the API response
+            sessionStorage.setItem('apiData', JSON.stringify(data));
+            //  console.log(JSON.parse(sessionStorage.getItem('apiData')));
+            // Redirect to the new site
+            window.location.href = 'http://localhost:8080/Tuan8/frontend/chart.html';
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+        });
+    </script>
+
+</body>
+
+</html>
