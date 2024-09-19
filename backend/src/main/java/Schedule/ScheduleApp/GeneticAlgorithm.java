@@ -113,12 +113,11 @@ public class GeneticAlgorithm {
 
 
     public double calcFitness(Individual individual, Schedule schedule) {
-        Double storedFitness = this.fitnessHash.get(individual);  // Kiem tra xem individual da ton tai trong hashtable chua
+        Double storedFitness = this.fitnessHash.get(individual);
         if (storedFitness != null) {
             return storedFitness;
         }
 
-        // Neu Individual chua ton tai trong hashtable:
         // Create new Schedule object for thread
         Schedule threadSchedule = new Schedule(schedule);
 
@@ -209,7 +208,6 @@ public class GeneticAlgorithm {
             // Apply crossover to this individual
 
             if (this.crossoverRate > Math.random() && populationIndex >= this.elitismCount) {
-                // Khoi tao offspring
                 Individual offspring = new Individual(parent1.getChromosomeLength());
 
 

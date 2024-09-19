@@ -22,7 +22,7 @@ public class ScheduleGA {
     @PostMapping("/createSchedule")
     public HashMap<Integer, AsignedTask> createSchedule() {
 
-        Schedule schedule = null;  // Khoi tao mot Schedule khoi dau (1)
+        Schedule schedule = null;
         try {
             schedule = DataLoader.initializeSchedule();
         } catch (IOException e) {
