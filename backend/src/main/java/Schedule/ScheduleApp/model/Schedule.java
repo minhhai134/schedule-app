@@ -101,8 +101,8 @@ public class Schedule {
         for (Integer taskListID : this.tasksList.keySet()) {
 
             // Check predecessors
-            ArrayList<Integer> predecessors = tasks.get(taskListID).getPredecessors(); // Lay ra cac task tien nhiem
-            for(int i = 0; i < predecessors.size(); i++) {  // duyet tung task tien nhiem
+            ArrayList<Integer> predecessors = tasks.get(taskListID).getPredecessors();
+            for(int i = 0; i < predecessors.size(); i++) {
                 if(tasksList.get(predecessors.get(i)).getEndTime()>= tasksList.get(taskListID).getStartTime()) clashes++;
             }
 
@@ -132,8 +132,8 @@ public class Schedule {
         for (Integer taskListID : this.tasksList.keySet()) {
 
             // Check predecessors
-            ArrayList<Integer> predecessors = tasks.get(taskListID).getPredecessors(); // Lay ra cac task tien nhiem
-            for(int i = 0; i < predecessors.size(); i++) {  // duyet tung task tien nhiem
+            ArrayList<Integer> predecessors = tasks.get(taskListID).getPredecessors();
+            for(int i = 0; i < predecessors.size(); i++) {
                 if(tasksList.get(predecessors.get(i)).getEndTime()>= tasksList.get(taskListID).getStartTime()) clashes++;
             }
 
@@ -177,12 +177,6 @@ public class Schedule {
     }
 
 
-
-
-
-    // TINH CHI SO TOI UU
-
-    // 1. Tinh time
     public int calcDurationTime () {
         int totalTime = 0;
 
@@ -195,7 +189,6 @@ public class Schedule {
         return totalTime;
     }
 
-    // 2. Tinh cost
 
     public double calcCost () {
         double cost = 0;

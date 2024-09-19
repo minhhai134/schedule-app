@@ -2,7 +2,9 @@ package Schedule.ScheduleApp;
 
 
 
-import Schedule.ScheduleApp.helper.AsignedTask;
+import Schedule.ScheduleApp.model.AsignedTask;
+import Schedule.ScheduleApp.model.Population;
+import Schedule.ScheduleApp.model.Schedule;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,9 +32,9 @@ public class ScheduleGA {
         // Initialize GA
         GeneticAlgorithm ga = new GeneticAlgorithm(80, 0.01, 0.85, 2, 6);
 
-        Population population = ga.initPopulation(schedule); // KHOI TAO NGAU NHIEN QUAN THE <- KHOI TAO QUAN THE <- KHOI TAO NGAU NHIEN CA THE
-        // DUA TREN SCHEDULE TRUYEN VAO
-        ga.evalPopulation(population, schedule);   // DANH GIA QUAN THE BAN DAU
+        Population population = ga.initPopulation(schedule);
+
+        ga.evalPopulation(population, schedule);
 
         // Keep track of current generation
         int generation = 1;
@@ -41,17 +43,16 @@ public class ScheduleGA {
         while (ga.isTerminationConditionMet(generation, 700) == false ) {
             //&& ga.isTerminationConditionMet(population) == false
             // Print fitness
-//			LOG.info("G" + generation + " Best fitness: " + population.getFittest(0).getFitness());
 
-            // Dat lai gia tri timeLimit
+
             schedule.setTimeLimit(population.getFittest(0).getTotalTime());
 
             // Apply crossover
             population = ga.crossoverPopulation(population);
 
             // Apply mutation
-            population = ga.mutatePopulation(population, schedule);  // schedule nay co thay doi khong, va thay doi o cho nao?
-            // Thay doi nhu the nao?
+            population = ga.mutatePopulation(population, schedule);
+
             // Evaluate population
             ga.evalPopulation(population, schedule);
 
@@ -86,7 +87,7 @@ public class ScheduleGA {
 
         }
 
-    return schedule.getTasksList();
+        return schedule.getTasksList();
     }
 }
 

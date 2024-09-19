@@ -12,32 +12,20 @@ public class Population {
     private Individual population[];
     private double populationFitness = -1;
 
-    public Population(int populationSize) {   // KHOI TAO MOT POPULATION rong, dung trong crossOver, selectParent, mutatePopulation
+    public Population(int populationSize) {
         // Initial population
         this.population = new Individual[populationSize];
     }
-// DOAN NAY LA TU COMMENT LAI DE TEST XEM KHI XOA DI CHUONG TRINH CO CHAY ON KHONG
-//    public Population(int populationSize, int chromosomeLength) {
-//        // Initial population
-//        this.population = new Individual[populationSize];
-//
-//        // Loop over population size
-//        for (int individualCount = 0; individualCount < populationSize; individualCount++) {
-//            // Create individual
-//            Individual individual = new Individual(chromosomeLength);
-//            // Add individual to population
-//            this.population[individualCount] = individual;
-//        }
-//    }
 
-    public Population(int populationSize, Schedule schedule) {   // KHOI TAO POPULATION CO GIA TRI NGAU NHIEN
-        // Initial population                                    // CHI DUNG MOT LAN DE KHOI TAO O PHAN DAU CUA CHUONG TRINH
+
+    public Population(int populationSize, Schedule schedule) {
+        // Initial population
         this.population = new Individual[populationSize];
 
         // Loop over population size
         for (int individualCount = 0; individualCount < populationSize; individualCount++) {
             // Create individual
-            Individual individual = new Individual(schedule);  // KHOI TAO MOT CA THE VOI GIA TRI NGAU NHIEN BANG mot object schedule
+            Individual individual = new Individual(schedule);
             // Add individual to population
             this.population[individualCount] = individual;
         }
@@ -48,7 +36,7 @@ public class Population {
      *
      * @return The average individual fitness
      */
-    public double getAvgFitness() {    // => DUNG CHO DOT BIEN- MUTATION
+    public double getAvgFitness() {
         if (this.populationFitness == -1) {
             double totalFitness = 0;
             for (Individual individual : population) {
@@ -65,10 +53,9 @@ public class Population {
         return this.population;
     }
 
-    // Lay ca the co do fitness cao thu "offset"
     public Individual getFittest(int offset) {
         // Order population by fitness
-        Arrays.sort(this.population, (Individual o1, Individual o2) -> {  // SAP XEP QUAN THE THEO THU TU FITNESS GIAM DAN
+        Arrays.sort(this.population, (Individual o1, Individual o2) -> {
             if (o1.getFitness() > o2.getFitness()) {
                 return -1;
             } else if (o1.getFitness() < o2.getFitness()) {
@@ -102,7 +89,7 @@ public class Population {
     }
 
 
-    public void shuffle() {   // => TRAO DOI THU TU CAC CA THE TRONG QUAN THE
+    public void shuffle() {
         Random rnd = new Random();
         for (int i = population.length - 1; i > 0; i--) {
             int index = rnd.nextInt(i + 1);

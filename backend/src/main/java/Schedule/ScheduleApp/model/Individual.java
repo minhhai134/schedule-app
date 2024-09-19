@@ -50,12 +50,12 @@ public class Individual {
 
 
     // Constructors:
-    public Individual(int[] chromosome) {  // => KHONG DUNG TRONG CHUONG TRINH CHINH
+    public Individual(int[] chromosome) {
         // Create individualchromosome
         this.chromosome = chromosome;
     }
 
-    public Individual(int chromosomeLength) {  // => DCHI DUNG TAI CROSSOVER, DE TAO CA THE RONG CO CHIEU DAI BANG PARENT
+    public Individual(int chromosomeLength) {
         // Create random individual
         int[] individual;
         individual = new int[chromosomeLength];
@@ -66,11 +66,10 @@ public class Individual {
         this.chromosome = individual;
     }
 
-    // KHOI TAO MOT CA THE VOI CAC GIA TRI NGAU NHIEN
-    public Individual(Schedule schedule) {                // TRUYEN VAO schedule de lam gi?
-        int numTasks = schedule.getNumofTasks();      //
-        //
-        // 1 gene for startTime, 1 for Resource  //
+
+    public Individual(Schedule schedule) {
+        int numTasks = schedule.getNumofTasks();
+        // 1 gene for startTime, 1 for Resource
         int chromosomeLength = numTasks * 2;
         // Create random individual
         int newChromosome[] = new int[chromosomeLength];
