@@ -1,7 +1,7 @@
-package Schedule.ScheduleApp;
+package Schedule.ScheduleApp.model;
 
 
-import Schedule.ScheduleApp.helper.*;
+import Schedule.ScheduleApp.model.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;

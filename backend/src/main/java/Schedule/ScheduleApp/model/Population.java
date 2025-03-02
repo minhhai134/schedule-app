@@ -1,8 +1,7 @@
-package Schedule.ScheduleApp;
+package Schedule.ScheduleApp.model;
 
 
-import Schedule.ScheduleApp.Individual;
-import Schedule.ScheduleApp.Schedule;
+import Schedule.ScheduleApp.model.*;
 
 import java.util.Arrays;
 import java.util.Comparator;

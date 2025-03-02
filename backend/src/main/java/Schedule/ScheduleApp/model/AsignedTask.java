@@ -1,4 +1,5 @@
-package Schedule.ScheduleApp.helper;
+package Schedule.ScheduleApp.model
+        ;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;

@@ -1,4 +1,4 @@
-package Schedule.ScheduleApp.helper;
+package Schedule.ScheduleApp.model;
 
 
 import java.util.ArrayList;

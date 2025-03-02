@@ -1,10 +1,11 @@
-package Schedule.ScheduleApp;
+package Schedule.ScheduleApp.model;
 
 
-import Schedule.ScheduleApp.helper.*;
+//import Schedule.ScheduleApp.helper.*;
 
 import javax.swing.*;
 import java.util.Arrays;
+import Schedule.ScheduleApp.model.*;
 public class Individual {
     private static int cnt=0;
     private int[] chromosome;
