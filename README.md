@@ -1,12 +1,26 @@
-# schedule-app
-Project: Xếp lịch công việc tối ưu thỏa mãn ràng buộc
+# 13Scheduler
+Project: Optimal Job Scheduling with Constraints
 
-Đàm Minh Hải
+Problem Introduction
+The RCPSP (Resource-Constrained Project Scheduling Problem) addresses project scheduling under limited resource constraints. MS-RCPSP (Multi-Skill RCPSP) extends the original RCPSP by incorporating multi-skill constraints for resources. In the MS-RCPSP problem, each resource can possess multiple skills, each with different proficiency levels. Tasks require specific skills at a certain level, and only resources meeting these requirements can execute them.
 
-Giới thiệu bài toán Bài toán RCPSP (Resource-Constrained Project Scheduling Problem) là bài toán giải quyết các vấn đề về lập lịch dự án với tài nguyên giới hạn bởi một số ràng buộc hoặc điều kiện nhất định. MS-RCPSP (Multi Skill-RCPSP) là bài toán mở rộng từ bài toán gốc RCPSP sau khi được bổ sung thêm ràng buộc về yếu tố đa kỹ năng của các tài nguyên. Trong bài toán MS-RCPSP, mỗi tài nguyên sẽ có thể có nhiều kỹ năng khác nhau, mỗi kỹ năng có thể có nhiều bậc (mức) kỹ năng khác, mỗi tác vụ cũng yêu cầu tài nguyên thực hiện cần đáp ứng đúng loại kỹ năng và phải đạt một mức nhất định mới có thể thực hiện được.
+Input:
+A set of resources, where each resource has an associated cost and a set of skills, each skill carrying a specific weight.
+A set of tasks, where each task has a duration and a list of prerequisite tasks that must be completed first.
+Output:
+A scheduled list of tasks that satisfy all constraints while optimizing time and cost.
 
-Đầu vào:
-Tập các tài nguyên, mỗi tài nguyên gồm chi phí và một tập các kỹ năng, mỗi kỹ năng có trọng số điểm riêng
-Tập các task, mỗi task gồm thời gian thực hiện, tập các task cần phải thực hiện trước
+# Sample Data File
+backend/src/main/java/Schedule/ScheduleApp/data.txt
 
-Đầu ra: Danh sách công việc đã được xếp lịch, thỏa mãn các rang buộc và tối ưu về thời gian, chi phí
+# Demo
+1. Select input file
+![](assets/select_file.png)
+
+2. Out put result
+![](assets/result.png)
+
+3. Out put log
+Satisfy the constraints:
+![](assets/log.png)
+
