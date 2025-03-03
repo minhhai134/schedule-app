@@ -5,9 +5,9 @@ FROM maven:3.8.6-eclipse-temurin-17-alpine AS builder
 WORKDIR /app
 
 # Copy only the pom.xml and mvnw files first to optimize Docker cache
-COPY pom.xml /app/
-COPY mvnw /app/mvnw
-COPY .mvn /app/.mvn
+COPY /backend/pom.xml /app/
+COPY /backend/mvnw /app/mvnw
+COPY /backend/.mvn /app/.mvn
 
 # Download dependencies
 RUN mvn dependency:go-offline -B
