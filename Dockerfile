@@ -13,7 +13,7 @@ COPY /backend/.mvn /app/.mvn
 RUN mvn dependency:go-offline -B
 
 # Copy the rest of the source code
-COPY . .
+COPY ./backend .
 
 # Build the application
 RUN mvn clean package -DskipTests
