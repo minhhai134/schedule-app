@@ -44,7 +44,7 @@ public class ScheduleGA {
         int generation = 1;
 
         // Start evolution loop
-        while (ga.isTerminationConditionMet(generation, 700) == false ) {
+        while (ga.isTerminationConditionMet(generation, 150) == false ) {
             //&& ga.isTerminationConditionMet(population) == false
             // Print fitness
 
