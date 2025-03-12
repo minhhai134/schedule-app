@@ -18,13 +18,15 @@ import java.util.HashMap;
 @CrossOrigin
 @RequestMapping("/api")
 public class ScheduleGA {
+    @Autowired
+    private DataLoader dataLoader;
 
     @PostMapping("/createSchedule")
     public HashMap<Integer, AsignedTask> createSchedule() {
 
         Schedule schedule = null;
         try {
-            schedule = DataLoader.initializeSchedule();
+            schedule = dataLoader.initializeSchedule();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

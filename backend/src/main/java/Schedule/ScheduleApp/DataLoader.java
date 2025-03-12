@@ -15,7 +15,7 @@ public class DataLoader {
 
 //    private Map<Integer, Task> taskMap = new HashMap<>();
 
-    public static Schedule initializeSchedule() throws IOException {
+    public  Schedule initializeSchedule() throws IOException {
 
         HashMap<Integer, Resource> resources = new HashMap<>();
         HashMap<Integer, Task> tasks = new HashMap<>();
@@ -129,9 +129,9 @@ public class DataLoader {
     //    public taskSchedule initializeSchedule(){
 //
 //    }
-    public static void main(String args[]){
-
-    }
+//    public static void main(String args[]){
+//
+//    }
 
 }
 
