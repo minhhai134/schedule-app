@@ -13,6 +13,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import org.springframework.stereotype.Component;
+
+
+@Component
 public class DataLoader {
     private final String filename = "D:\\PRJ2\\CODE\\Sample code\\Class-Scheduler-Sample3\\src\\main\\java\\GeneticAlgorithm\\ClassScheduler\\data.txt";
 
