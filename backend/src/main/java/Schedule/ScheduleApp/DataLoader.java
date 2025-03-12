@@ -20,7 +20,7 @@ public class DataLoader {
         HashMap<Integer, Resource> resources = new HashMap<>();
         HashMap<Integer, Task> tasks = new HashMap<>();
 
-        BufferedReader reader = new BufferedReader(new FileReader("Schedule/ScheduleApp/data.txt"));
+        BufferedReader reader = new BufferedReader(new FileReader("backend/src/main/java/Schedule/ScheduleApp/data.txt"));
         String line;
 
         while ((line = reader.readLine()) != null) {
